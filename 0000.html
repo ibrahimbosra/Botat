@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Send Messages Automatically</title> 
+  <script>
+        // List of links to send the messages to
+        var links = [
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001674516783&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001678917206&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001661625374&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001665555633&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001668833194&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001619859675&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001643315661&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001644528081&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001579543984&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001585168586&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001592635314&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001564693228&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001388823027&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001409184211&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001432045921&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001136786666&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001244264216&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001854962119&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001852560363&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001790491008&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001542718942&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001799261469&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001871000262&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001772532346&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002023595599&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002124950478&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002044158760&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002060376624&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002113357435&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002052221994&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002037538782&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002085697583&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002053709515&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002140233169&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001547977541&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002032499064&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002076911299&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002006895807&text=1",
+
+            // روابط جديدة مضافة
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001894804416&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002234535468&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001706485527&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001824668653&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002662834354&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002127090175&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002094187079&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001741920356&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001692383741&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001697066927&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001678951905&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002103404281&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002129198142&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002026499606&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002091957588&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1001853401466&text=1",
+            "https://api.telegram.org/bot7995799081:AAFI0dITmnc6ZRvrpAUgTJoFgqGJuhzfGas/sendMessage?chat_id=-1002177395018&text=1"
+        ];
+
+        function sendMessages() {
+            for (var i = 0; i < links.length; i++) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", links[i], true);
+                xhr.send();
+            }
+            alert("Messages Sent!");
+        }
+
+        window.onload = function() {
+            sendMessages();
+        };
+    </script> 
+ </head> 
+ <body> 
+  <h1>Sending messages automatically...</h1> 
+  <p>Messages will be sent to all channels listed automatically when the page loads.</p> 
+ 
+</body></html>
